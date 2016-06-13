@@ -15,7 +15,7 @@ In the example above we can see a function declaration of the function “foo”
 It consists of the keyword “Func” followed by a function name and type signature. 
 The type signature is a sequence of types that the function can take as input. 
 The types in this sequence is separated by the arrow keyword “→” and ends with the return type of the function. 
-\linebreak
+
 The type signature can also be declared in a way that would allow the function name to be infix:
 
 \begin{code}
@@ -24,9 +24,9 @@ The type signature can also be declared in a way that would allow the function n
 
 Note the priority arrow “#>” that is added to the declaration. 
 This priority arrow allows the programmer to assign priority and associativity to the function. 
-\linebreak
+
 To define the functions we declared we need to add rules.
-\linebreak
+
 In the next example we can see both “foo” and “bar” defined as single rules. 
 Because of the simplicity of the rule we can define it without using premises.
 
@@ -44,7 +44,7 @@ It can however be defined with premises as shown below.
 \end{code}
 
 As shown, the premise is located above the input output line of the rule and separated with a horizontal line.  
-\linebreak
+
 It is possible to define multiple rules for the same function.
 
 \begin{code}
@@ -102,7 +102,7 @@ Below we see an example of how this tuple can be used.
 Here we can see the two things that Data in MC can do, namely constructing and deconstucting data structures. 
 When data is used on the left side of the premise arrow it takes arguments and stores them into the data structure.  
 And when data is used on the right side of the premise arrow it will take the data structure and binds it content to new value names.     
-\linebreak
+
 Unions of data can also be made by using the same return type.
 
 
@@ -124,7 +124,7 @@ Unions of data can also be made by using the same return type.
 \end{code}
 
 The float and the int can both be contained by the type “fiunion” because of the “F” and “I” data deconstructors that share the same type, namely “fiunion”.
-\linebreak
+
 These rule definitions of “foo” can be shortened to the following:
 
 
@@ -139,7 +139,7 @@ The matching of data deconstructors “F” and “I” are now done in the inpu
 
 A generic declaration allows for a function to become polymorphic with its types. 
 This means that one declaration can take to multiple type signatures.
-\linebreak
+
 Information must be added to the declarations to make functions and data generic. 
 We do this by marking type vars with an “ ` ”.
 
@@ -163,7 +163,7 @@ In the declaration of “foo” it is specified that the type of the first argum
 “foo” is given a 5 which is a int. 
 Following these facts we can deduce that everything type checks. 
 We can do this without knowing the definition of “foo” because the declaration holds all the type information we need.
-\linebreak
+
 Here we have “foo” take a different type as its input, namely a float.
 
 \begin{code}
@@ -171,7 +171,7 @@ Here we have “foo” take a different type as its input, namely a float.
 \end{code}
 
 In the example above we run into a type error because “foo” will now return a float which conflicts with the int that “bar” is expecting.
-\linebreak
+
 There are situations where the type information in the declaration wont be enough to inference all the types. For example:
 
 \begin{code}
@@ -186,7 +186,7 @@ The only way to find their relation to one another is to look in the definition 
 In data, generic arguments have additional consequences. 
 Because data structures need to be able to construct to a container and deconstruct from a container, 
 additional type information is needed in the return type of the data declaration.
-\linebreak
+
 Take in the following code.
 
 \begin{code}
@@ -201,7 +201,7 @@ In one of the foo’s we return a “,” with two int’s and in the other we r
 They are both tuple according to “,” however we have no way to verify this in the syntax. 
 What if the definition of foo doesn’t work with a “,” that carries two int’s? 
 Normally we would specify in the declaration the exact type that foo requires but how do we do that when generics are involved?
-\linebreak
+
 Our solution was special type-application syntax.
 
 \begin{code}
@@ -230,9 +230,9 @@ In order to show all the functionality of a type function we first need to know 
 -Types
 
 -Kinds
-\linebreak
+
 Lets first look at the one we are most familiar with at the moment, the term.
-\linebreak
+
 In short, terms carry values. Below we can see an example of this.
 
 \begin{code}
@@ -243,11 +243,11 @@ In short, terms carry values. Below we can see an example of this.
 \end{code}
 
 If we look at the function definition above we see an example of simple value manipulation. The value holder “b” equals value holder “a” plus five. Value holder “res” equals value holder “b” plus five point five.
-\linebreak
+
 All the value holders are terms and are able to execute on run-time because their type information is known.
-\linebreak
+
 Types on the other hand need to be executed on compile-time in order to get all the type information for the compiled program.
-\linebreak
+
 In the function declaration below we see a function with two types. 
 These types are constant and can not be changed by the compiler.
 
@@ -262,7 +262,7 @@ However if we use a generic like so:
 \end{code}
 
 the types become variable and are now dependent on the function that calls “bar”.
-\linebreak
+
 You can already see the relation between terms and types.
 
 \begin{code}
@@ -271,10 +271,10 @@ You can already see the relation between terms and types.
 \end{code}
 
 A term gets its identity from a type. For instance, 5 is a int, 5.5 is a float and “str” is a string.
-\linebreak
+
 Kind have a similar relation with types. Kinds are to types as types are to terms. 
 In order to explain this we will now look at type functions.
-\linebreak
+
 The example below shows both familiar syntax and new syntax. 
 We can still recognize that the code above consists of a declaration and definition. 
 what is new though are the keywords “Typefunc”, “Type” and “=>”.
@@ -285,9 +285,9 @@ what is new though are the keywords “Typefunc”, “Type” and “=>”.
 \end{code}
 
 In the declaration we see that the keyword “TypeFunc” is used to start the declaration of a type function. Notice that the single arrow “→” that is normally used in declarations is replaced by a double arrow “=>”. The deference between these arrows signify if the code is supposed to be run-time or compile-time. And lastly we see the keyword “Type” which is used to tell that the type function “*” will take two types and return a type.
-\linebreak
+
 In short the keyword “Type” signifies the use of a kind.
-\linebreak
+
 Lets give a example of when this is useful. Remember back above with the generic data tuple:
 
 \begin{code}
@@ -313,9 +313,9 @@ things become tedious. Type functions offer a solution for this problem. For ins
 \end{code}
 
 the declaration becomes more manageable.
-\linebreak
+
 As you can see we are using type functions in a declaration. It is because type functions are done on compile-time that they can manipulate type information.
-\linebreak
+
 Aside of manipulating type information type functions also have all the capabilities that a normal function has. Type functions are able to manipulate all the levels of MC, namely terms, types and kinds. As example:
 
 \begin{code}
@@ -340,7 +340,7 @@ The difference between this tuple and the tuple we declared with data is that th
 \subsection{Modules}
 
 And lastly we look at modules.
-\linebreak
+
 Modules are created by a type function and can contain all the aforementioned syntax. Below we can see an example of a module being declared and defined.
 
 \begin{code}
