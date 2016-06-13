@@ -1,0 +1,97 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1}Intro}{1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.1}Context}{1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {1.1.1}The company}{1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {1.1.2}The research group}{1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {1.1.3}Motive}{1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2}Research questions}{2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.1}Adaptability requirement}{2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2}Correctness requirement}{2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.3}Diagnostic requirement}{2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3}Meta Casanova}{3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.1}Functions}{3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.2}Data}{4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.3}Generic declaration}{5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.4}Polymorphic data structures}{5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.5}Type functions}{6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.6}Type aliases}{7}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.7}Modules}{8}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4}Reasearch}{9}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.1}Overview of the front-end}{9}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {4.1.1}Overview abstractions}{9}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {4.1.2}Why we do not use lexer generators}{10}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {4.1.3}Why we did not use a Yacc generated parser}{10}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {4.1.4}Basic type checking}{10}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.2}Concepts of parsing}{11}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {4.2.1}Parse tree}{11}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {4.2.2}Monad}{12}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {4.2.3}Computational statements}{13}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {4.2.4}Parser monad}{13}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {4.2.5}Parser combinators}{15}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.3}Developing the parser}{16}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {4.3.1}Modular parser}{16}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.4}Developing the type checker}{16}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {4.4.1}Normalizing before type-checking}{16}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {4.4.2}Modular Type checker}{16}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5}Results}{17}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.1}Accomplishing requirements}{17}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {5.1.1}Adaptability requirement}{17}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {5.1.2}Correctness requirement}{17}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {5.1.3}Diagnostic requirement}{17}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.2}Other results}{17}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6}Conclusion}{19}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7}Recommendations}{20}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.1}Plans for the type function interpreter}{20}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8}Evaluation}{21}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.1}Administering}{21}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.2}Analyzing}{21}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.3}Advising}{21}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.4}Designing}{21}

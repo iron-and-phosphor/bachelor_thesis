@@ -1,0 +1,366 @@
+\section{Reasearch}
+
+\subsection{Overview of the front-end}
+
+In this chapter we will first take a global look at the front-end and type checker of the compiler. Then we look at examples of why tools for generating a front-end were not chosen for creating the MetaCasanova compiler. 
+\linebreak
+First we look at the basic design of the front-end. The front-end of our compiler consist of a lexer and parser. The lexer is able to identify keywords, convert a list of digits into a integer or floating point number and convert a list of characters into a string if the characters are enclosed by the “ symbol. The lexing process produces a list of tokens as result. 
+\linebreak
+The tokens need to be detailed enough for the parser so the parser never has to manipulate the data they contain, only read it. This is done in a way so that the parser will not have to do the tedious job of identifying what should be, the smallest components in the language. This makes the parser code easier to read and makes compiling faster. Consider that the list of characters given as input to the parser always needs to be identified before every syntactic check, if the parser needs to do this identification before every check the parser would end up with a complexity of O(n2). However if the lexer identifies all tokens before parsing the lexer will get O(n) and O(n) for the parser. Meaning a O(n) for the entire lexing parsing process. 
+\linebreak
+The parser fills a data structure from the list of tokens provided by the lexer. This data structure closely resembles the syntax tree that specifies the syntax of the language that needs to be parsed. The parser also needs to be able to find errors in the syntax and give useful feedback about these errors such as the position of where the error occurred and the kind of error. 
+\linebreak
+The type checker uses a type system to check if the functions and variables in a program are compatible with each other. A type system allows a function or variable to be identified as a certain type. Once types are identified, rules can be applied to the types to check for validity of the code on compile time. 
+\linebreak
+Once parsing is done there is a data tree that the type checker can traverse. In this data tree all connections between the components of the language can be found. It is the type checkers job to verify that these connections are sound and if this is not the case, give useful error messages as feedback. This process generates type information that will be used in the back-end of the compiler during optimization and code generation. 
+
+\subsubsection{Overview abstractions}
+
+In the previous section we showed the basic components of a front-end and mid-end of a compiler. Now we can start looking into the structures needed to keep the code readable and maintainable. 
+\linebreak
+The key to maintainable code is writing short code []. If there is less code, there is less to maintain. In order to shorten code we must use a structure that allows code to be re-used. If we create code with a modular structure, we create an environment where we can quickly and correctly create new structures that are easy to maintain in the future. 
+\linebreak
+In order to achieve this for the lexer and parser we use the the Parser Monad. The Parser Monad in combination with Parser Combinators allow us a higher level of abstraction. A feature such as error handling is already integrated into the parser monad making it easy to implement. 
+
+\subsubsection{Why we do not use lexer generators}
+
+Although Flex generates powerful lexers it forces you to work in a certain way that makes it difficult to add things such as line and column detection or error support. The reason these difficulties arise is because Flex is a lexer generator. Because of its generating nature it leaves little room for customization. 
+\linebreak
+Furthermore the front-end discussed in this paper is written in an functional language (F\#) and even though you could incorporate a Flex generated lexer in F\# it would be safer and more future proof to made your own lexer in F\#. 
+
+\subsubsection{Why we did not use a Yacc generated parser}
+
+For the same reasons we are not using Flex. There are also certain features of the language we are parsing that would be more difficult to implement in Yacc. The next example is easy to parse: 
+
+\begin{code}
+	Func "add" -> int -> int -> int 
+	add a b -> a + b 
+\end{code}
+
+In this example we have a relatively simple structure. First we declare the function add that will take two int’s and then return an int. Then we define the function add and bind the variable a to the first int and variable b to the second int. Finally we return the sum of a and b. This example is easily parsed by Yacc because it is predictable. It can also easily be parsed by a Bottom-up structure. The next example is not simply parsed. 
+
+\begin{code}
+	Func int -> "sub" -> int -> int 
+	a sub b -> a – b 
+\end{code}
+
+In this example we added an argument at the left side of the function name. Note that the two examples above do not exclude each other. Both could exist in the same file. Yacc has trouble parsing this situation because it isn’t sure what to call an variable and what to call a function name. If you could guarantee that there will always be one variable on the left side of a function, Yacc would be able to parse it because it would be easy to predict in a Bottom-up structure. However in the nature of this language that is not something we can know for sure and thus Yacc has trouble parsing this. If the function was build into the parser then it would work seeing as it would have a static name to find. However in the case of sub the function name was declared in the code itself and thus would require you to first parse the code to acquire the function name and then to generating a parser that could identify the definition of the function. 
+
+\subsubsection{Basic type checking}
+
+In order to compile code we need to know all the types of the functions variables and literals that are present. For instance there will be cases were the declaration knows all the types: 
+
+\begin{code}
+	Func "foo" -> int -> bool  
+\end{code}
+
+We know it will take an int and return a bool. this static way of declaring types is not the only way to do so. Below we have a dynamically typed declaration. 
+
+\begin{code}
+	Func "foo" -> ‘a-> ‘a 
+	Func "bar" -> int -> int 
+	Func "vla" -> bool -> bool 
+	foo x -> x 
+	bar y -> foo y 
+	vla z -> foo z
+\end{code}
+
+In this declaration of foo we do not have a clear insight as to what the types are of the arguments and the return value. The only way to determine what the types are is to look at the definitions. In the definition of foo we do not have indications what the types could be. However if we look further we can see that the function “bar” uses “foo” and “bar” does have clear types. So if we cross reference the types between “bar” and “foo” we can conclude that “foo” takes an int and returns an int. 
+\linebreak
+But if we look at the definition of “vla” we can see that “vla” also uses foo and this time foo takes a bool and returns a bool. This is the power of dynamic typeing. We can give a generic declaration and use it to make multiple definitions of the same function using different types. 
+\linebreak
+Of course this only works if the definition of foo is equally generic. For instance:
+
+\begin{code}
+	foo x -> x + 5 
+\end{code}
+
+If we make “foo” adds five to the end result we make foo less generic. We now have limited the options foo can have as types to the types that allow five to be added to them.
+
+\subsection{Concepts of parsing}
+
+In the previous chapter we gave a global overview op parsing. In this chapter we will show the structures and abstractions used in the compiler. 
+
+\subsubsection{Parse tree}
+
+The syntax tree is the representation of all the syntax in a language. This language was made up for explaining the parse tree, it is not MC. The parse tree defines all the correct syntax that the language is capable of. Let’s give an simple example of a parse tree.
+
+\begin{code}
+	(Lines) 
+		(Line) (Lines) 
+		(Line) 
+	(Line) 
+		(Define) 
+		(Print) 
+		Newline 
+	(Define) 
+		<Define>Name (Content)
+	(Content) 
+		Value (Content) 
+		Operator (Content) 
+		Function (Content) 
+		Newline 
+	(Print) 
+		<Print>Name Newline
+\end{code}
+
+Here we have an outline of an simple programming language where we can define and print data. The code that would fit this tree would look like this: 
+
+
+\begin{code}
+	Define foo 5 + 4 
+	Define bar foo + 1 
+	Print bar 
+\end{code}
+
+
+We will now analyze the example code and parse tree in further detail. 
+\linebreak
+As you can see the language has two keywords: “Define” and “Print”. When the keyword Define is found, the parser will expect an name and content to be defined. The “Name” will be easy to parse because it can only be one thing, in this case a string of characters. “Content” however can be multiple things as seen in the parse tree. If we look at the “Content” after the definition of foo we could parse this “Content” as: Value <- Operator <- Value <- Newline with 5 and 4 being the values, plus being the operator and Newline being the promise that the code will continue on the next line. The definition of bar has a similar Content namely: function <- operator <- value <- newline. 
+\linebreak
+Lines are made up out of either a line followed with another line or just a singular line. A line consists of either a definition or a print statement. Note that a “line” can also consist of a newline. If newline is not specified in the parse tree than empty lines in the code are not correct syntax and will result in an error. Following this logic you can see that if there is not a newline after the last line of code then the content wouldn’t parse and neither would the print statement because they require a newline to terminate.
+
+\subsubsection{Monad}
+
+Before we can look into the abstractions that are used in the compiler we first need to know about monads.
+\linebreak
+Monads are interfaces to container-like objects with two generic functions. One function that allows data to be stored in the container and one function that allows for a function to be applied to the data in the container and puts the result of that function into a new container.
+\linebreak
+The return is the function that allows for a value to be stored inside the monad. Here we have some example code of a monad and its return function written in F\#.
+
+\begin{code}
+	type Monad<t> = {I : t}
+	let ret (x:`a) :Monad<`a> = {I = x}
+\end{code}
+
+In the example above we see a structure Monad that can hold a value of a generic type. We also see the function “ret” that takes an value of a generic type as argument and returns a “Monad” of the same generic type.
+\linebreak
+The bind is a function that applies a function to the value inside a given monad and returns a new monad. Below we see an implementation of a bind done in f\#.
+
+\begin{code}
+	let bind (M:Monad<`a>) (k:`a → Monad<`b>): Monad<`b> = k M.I
+\end{code}
+
+This way we can chain monads to each other like so:
+
+\begin{code}
+	let f1 = (fun a → {I = a + 4}) 
+	let f2 = (fun a → {I = a - 6})       
+	let res = ret 4 |>  bind f1 |> bind f2 
+\end{code}
+
+We have two functions “f1” and “f2” that take a value and return a monad that contains the result of the function. We then put the value “4” inside a monad with the return function and pass it to a bind function that takes “f1” as the function to bind the input monad to. After “f1” is bound the resulting monad is passed to a second bind function that binds the input monad to the “f2” function. Once executed the variable “res” will contain a monad with the value “2” inside.
+
+\subsubsection{Computational statements}
+
+In F\# there is syntactic sugar to make the use of a monad easier for the programmer. 
+\linebreak
+To make use of this syntactic sugar we first need to create a interface for the F\# compiler. Below we see such a interface for the monad that was used above,
+
+\begin{code}
+	type MonadBuilder() = 
+		member this.Bind m k = bind m k
+		member this.Return x = ret x
+		member this RetrunFrom x = x
+	let mon = MonadBuilder()
+\end{code}
+
+Now we can rewrite the bind example above using computational statements as syntactic sugar:
+
+\begin{code}
+	let res = ret 4 |> Mon {
+		do! f1
+		do! f2
+	} 
+\end{code}
+
+Which ones again results in a monad containing the number 2.
+
+\subsubsection{Parser monad}
+
+Parser monads are monads that have the characteristics of a parser. This means that the monad takes a list of elements to traverse over and builds a data structure as a result. Because it is also a monad the parser monads can be used to form an algebra of parsers. Parser monads can thus be combined with the use of operators called parser combinators. The parser monad is a powerful abstraction that makes building complex parsers more intuitive. 
+\linebreak
+The signature of the parser monad used in our parser is : 
+
+\begin{code}
+	type Parser<'char,'ctxt,'result> = List<'char> * 'ctxt -> Result<'char,' ctxt,'result> 
+\end{code}
+
+As you can see it takes a list of a certain type and a context that could be any data structure you wanted it to be and then returns it as a Result. A result represents the entire result of a parser monad, be it the state of the parser monad, the return value or if the parser monad succeeded or not.
+\linebreak
+The signature of result is as followed: 
+
+\begin{code}
+	type Result<'char,'ctxt,'result> = | Done of 'result * List<'char> * ' ctxt | Error of ErrorType 
+\end{code}
+
+Result can be a Done of an result, a list of a certain type and a context. The Done represents the output of a parser monad that has successfully completed its task. Error on the other hand represents a monad that has failed. 
+\linebreak
+The bind of the parser monad takes a parser monad and a function to bind to that parser monad and returns a new parser monad that is the result of the function that was bound. The bind will match the parser monad that it gets as input for either a “Done” that contains a value or it will match with an “Error” that contains error information.
+In case that the “Done” matches the value stored in the “Done” will be given to the function that the parser monad had reseed as input. This function will then return a new parser monad which is the result of the bind. In case the “Error” matches the “Error” that was matched will be the result of the bind.
+\linebreak
+The bind function of the parser monad is as follows:
+
+\begin{code}
+	let bind (p:Parser<`char,`ctxt,`result>, k:`result->Parser<`char,`ctxt,`result>) = 
+		fun (chars,ctxt) ->
+			match p (chars, ctxt) with
+			| Error(e,p) → Error(e,p)
+			| Done (res,chars`,ctxt`) →
+				k res (chars`, ctxt`)
+\end{code}
+
+Bind takes the parser that needs to be executed (“p”) and checks if the it failed or if it was successful. If “p” failed  than the error that “p” generated will be returned by the bind. But if “p” succeeded, then the continuation (“k”) will take the result of  “p” and creates the next parser in the bind sequence with it.
+\linebreak
+The return function is simpler then the bind because it only takes a value and stores it in a parser monad. That parser monad will be the result of the return function. Below we see an example of the return function of the parser monad. 
+
+\begin{code}
+	let ret (res:`result): Parser<`char,`ctxt,`result> =
+	fun (chars,ctxt) = Done(res,chars,ctxt)
+\end{code}
+
+Now that we have an understanding of how a parser can be constructed we can look at an example of a parser monad. Here we see a parser monad that checks if the next char in the list is equal to the char that is expected.
+
+
+\begin{code}
+	let char (expected:char) :Parser<char,Position,Unit> = 
+	prs{ 
+		let! next_char = step 
+		if next_char = expected then 
+			do! increment_col 
+			return () 
+		else 
+			let! ctxt = getContext 
+			do! fail (LexerError ctxt) 
+	}
+\end{code}
+
+Step is also an monad that returns the next element in a list. As you can see an simple if-statement is used to compare the next char to the expected char. If the statement is successful the position will be modified by incrementing the column number because we moved a column to the right. 
+\linebreak
+Position in this case is the context of the monad. If the statement fails however we will return an LexerError containing the position information. Now we have a parser monad that can check a single char and are able to create more complex parsers. 
+\linebreak
+Here we have a parser monad that succeeds when two or more dashes are detected.
+
+\begin{code}
+	let horizontal_bar pos :Parser<char,Position,Token> = 
+		prs{ 
+			do! char '-' 
+			do! char '-' 
+			do! char '-' |> repeat |> ignore 
+			return Keyword(HorizontalBar,pos) 
+		}
+\end{code}
+
+If one of these char monads fail then the horizontal-bar monad will fail also. 
+
+\subsubsection{Parser combinators}
+
+The main reason why we use monadic parsers is for the use of parser combinators. A parser combinator is a monadic parser itself, one that takes either one or more parser monads and changes the given monads to give a desired effect. Let’s look at a few examples. 
+\linebreak
+Here we see the basic parser operator (.»). This operator will succeed when both of the parser monads given succeed. However upon success the (.») operator will only return the result of the left parser given. 
+
+\begin{code}
+	let (.>>) (l) (r) = 
+		prs{ 
+			let! res = P1 
+			do! P2 
+			return res 
+		} 
+	} 
+	char ‘(’a) .>> char ‘(’b)
+\end{code}
+
+There are other variants of this operator that do a similar function such as (».) which returns the result of the right parser given if both parsers succeed. And (.».) which returns both results in tuple form if both parsers succeed. 
+\linebreak
+Another basic operator that gets a lot of use is the (.||) operator. Similar to the (.») operator it takes two parsers however where the (.») has to execute both parsers given the (.||) only needs to execute one at best.
+
+\begin{code}
+	let inline (.||) (p1:Parser<_,_,'a>) ( p2:Parser<_,_,'a>) : Parser<_,_,'a> = 
+		fun (chars,ctxt) -> 
+		match p1(chars,ctxt) with 
+		| Error(p1) -> 
+			match p2(chars,ctxt) with 
+			| Error(p2) -> Error(p2) 
+			| Done(res2,chars',ctxt') -> (res2,chars',ctxt') |> Done 
+		| Done(res1,chars',ctxt') -> (res1,chars',ctxt') |> Done
+\end{code}
+
+If the left parser succeeds the right parser will not be executed. However if the left parser fails the right parser gets executed. So unlike (.») the result upon success depends on which parser succeeds first. In case both parsers given fail the 7 error given by the last parser executed will be the error returned by the operator. 
+\linebreak
+This time the dot symbolizes the parser that is first executed. With these operators we now have access to simple logic which we can use to create more complex parser combinators. 
+\linebreak
+For example the repeat combinator. The repeat combinator takes a parser and transforms it into a parser that repeats the given parser until the given parser fails.
+
+\begin{code}
+	let rec repeat (p) = 
+		prs{ 
+			let! x = p 
+			let! xs = repeat p 
+			return x :: xs 
+		} .|| prs {return []} 
+	repeat char ‘’(-) 
+\end{code}
+
+In the case of “repeat char (‘-’)” the parser created will take “-” from the character list until it encounters something that is not a “-”. You may wonder what the result of such a parser may be. Well, seeing that char(‘-’) returns unit as result repeat char (‘-’) will return a list of units. 
+\linebreak
+A problem with repeat is that it will never give an error as it uses the error to identify the end of the sequence. So if repeat “fails” the result will be a empty list. There are situations where we want to preserve the error messages that repeat comes across. 
+\linebreak
+So we will look at iterate. Iterate will succeed if all of the elements from the starting position to the end of file succeed. If iterate fails the last element that failed will give the error message returned by iterate. 
+
+\begin{code}
+	let rec iterate (p:Parser<_,_,'result>) : Parser<_,_,List<'result>> = 
+	prs{return! eof >>. ret []} .|| 
+	prs{ 
+		let! x = p 
+		let! xs = iterate p 
+		return x::xs 
+	}
+\end{code}
+
+\subsection{Developing the parser}
+Now we know about what a parser does and the abstractions used in them we will look at the structure and design choices of the parser itself.
+
+\subsubsection{Modular parser}
+
+To work in iterations the parser is designed to be modular so we can easily add new functionality. It achieves this modularity by making the parser multi pass which means that it takes multiple passes to parse a single file.
+\linebreak
+The passes are separated into four groups, namely:
+
+-Type function and Type alias declarations.
+
+-Type function and Type alias definitions.
+
+-Data and function declarations.
+
+-Function definitions.
+\linebreak
+The reason that these groups are separated like this is because of how dependencies of the language works.
+
+Function definitions need the function declarations and may need the other groups.
+
+Data may need type functions and type aliases.
+
+Type function and Type alias definitions need their declarations and may need other type functions and aliases.
+
+And the Type function and Type alias declarations may need other type functions and aliases.
+
+
+
+
+\subsection{Developing the type checker}
+
+\subsubsection{Normalizing before type-checking}
+If the input of the type checker is normalized the type checker becomes simpler.
+The normalized parser-ast is similar to the back-end interface but it also allows for generic types.
+
+
+\subsubsection{Modular Type checker}
+The type checker is separated into several modules that each check the types of a part of the MC mark 3 language .
+	Rule type checkers
+	Function type checker
+	Data type checker
+	Type alias type checker
+	Type function type checker
+
+
+

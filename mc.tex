@@ -1,0 +1,366 @@
+\section{Meta Casanova}
+
+Before we can show the compiler, we need to have a look at the language that it needs to compile. 
+In this chapter we will explore the syntax and features of Meta Casanova mark 3. 
+
+\subsection{Functions}
+
+The functions in MC first need to be declared before they can be defined in rules. We do so like this.
+
+\begin{code}
+	Func “foo” → int → int → int
+\end{code}
+
+In the example above we can see a function declaration of the function “foo”. 
+It consists of the keyword “Func” followed by a function name and type signature. 
+The type signature is a sequence of types that the function can take as input. 
+The types in this sequence is separated by the arrow keyword “→” and ends with the return type of the function. 
+\linebreak
+The type signature can also be declared in a way that would allow the function name to be infix:
+
+\begin{code}
+	Func int → “bar” → int → int  #> L 5
+\end{code}
+
+Note the priority arrow “#>” that is added to the declaration. 
+This priority arrow allows the programmer to assign priority and associativity to the function. 
+\linebreak
+To define the functions we declared we need to add rules.
+\linebreak
+In the next example we can see both “foo” and “bar” defined as single rules. 
+Because of the simplicity of the rule we can define it without using premises.
+
+\begin{code}
+	foo a b → a + b
+	a bar b → a + b
+\end{code}
+
+It can however be defined with premises as shown below.
+
+\begin{code}
+	a + b → res 
+	--------
+	foo a b → res
+\end{code}
+
+As shown, the premise is located above the input output line of the rule and separated with a horizontal line.  
+\linebreak
+It is possible to define multiple rules for the same function.
+
+\begin{code}
+	a < 5
+	a + b → res
+	---------
+	foo a b → res 
+	
+	a >= 5
+	a - b → res
+	---------
+	foo a b → res 
+\end{code}
+
+Here we have a situation in which the function foo has multiple rules. 
+When such a situation arises the rules will be executed in the same order as they are found in its file when the function is called.  
+As you can see the first premise of both rules has a different kind if premise in it, a conditional. 
+If value “a” is less then 5 then the first rule will succeed the second rule will be ignored. 
+And if “a” is equal or greater then 5 the first rule will not match and the the second rule will succeed. 
+If both rules wont the program will crash.
+
+
+\subsection{Data}
+
+Data declarations are used to create data structures. For example, to declare a tuple of two int’s we write:
+
+\begin{code}
+	Data int →  “,” → int → ituple
+\end{code}
+
+Above we see a data declaration. 
+It consists of the keyword “Data” followed by a name and a type signature. 
+The data structure “,” is capable of containing two int’s in a container with the type “ituple”. 
+Below we see an example of how this tuple can be used.
+
+
+\begin{code}
+	Func “give-back-tuple” → int → int → ituple
+	Func “give-back-left” → ituple → int
+	Func “give-back-right” → ituple → int
+	
+	a,b → res
+	-----
+	give-back-tuple a b → res
+	
+	a → left,nope
+	-----
+	give-back-left a → left
+	
+	a → nope,right
+	-----
+	give-back-right a → right
+\end{code}
+
+Here we can see the two things that Data in MC can do, namely constructing and deconstucting data structures. 
+When data is used on the left side of the premise arrow it takes arguments and stores them into the data structure.  
+And when data is used on the right side of the premise arrow it will take the data structure and binds it content to new value names.     
+\linebreak
+Unions of data can also be made by using the same return type.
+
+
+\begin{code}
+	Data “F” → float → fiunion
+	Data “I” → int → fiunion
+	
+	a → F contentA
+	b → F contentB
+	F (contentA + contentB) → res
+	-------
+	foo a b → res
+	
+	a → I contentA
+	b → I contentB
+	I (contentA + contentB) → res
+	-------
+	foo a b → res
+\end{code}
+
+The float and the int can both be contained by the type “fiunion” because of the “F” and “I” data deconstructors that share the same type, namely “fiunion”.
+\linebreak
+These rule definitions of “foo” can be shortened to the following:
+
+
+\begin{code}
+	foo (F contentA) (F contentb) → F (contentA + contentB)
+	foo (I contentA) (I contentb) → I (contentA + contentB)
+\end{code}
+
+The matching of data deconstructors “F” and “I” are now done in the input space of the rule definition.
+
+\subsection{Generic declaration}
+
+A generic declaration allows for a function to become polymorphic with its types. 
+This means that one declaration can take to multiple type signatures.
+\linebreak
+Information must be added to the declarations to make functions and data generic. 
+We do this by marking type vars with an “ ` ”.
+
+\begin{code}
+	Func “foo” → `a → `a
+\end{code}
+
+The “ ` ” in front of the type names denotes a type variable. 
+These generic types are used to give the type-checker information during type inference. 
+For instance
+
+
+\begin{code}
+	Func “bar” → int
+	bar → foo 5
+\end{code}
+
+We have the function “bar” that returns the result of function “foo”. 
+In the declaration of “bar” it is specified that it will return an int. 
+In the declaration of “foo” it is specified that the type of the first argument is the same as its return type. 
+“foo” is given a 5 which is a int. 
+Following these facts we can deduce that everything type checks. 
+We can do this without knowing the definition of “foo” because the declaration holds all the type information we need.
+\linebreak
+Here we have “foo” take a different type as its input, namely a float.
+
+\begin{code}
+	bar → foo 5.5
+\end{code}
+
+In the example above we run into a type error because “foo” will now return a float which conflicts with the int that “bar” is expecting.
+\linebreak
+There are situations where the type information in the declaration wont be enough to inference all the types. For example:
+
+\begin{code}
+	Func “bas” → `a → `b
+\end{code}
+
+In the function “bas” we now have two generic types that are independent to each other. 
+The only way to find their relation to one another is to look in the definition of “bas” and see how they are connected.
+
+\subsection{Polymorphic data structures}
+
+In data, generic arguments have additional consequences. 
+Because data structures need to be able to construct to a container and deconstruct from a container, 
+additional type information is needed in the return type of the data declaration.
+\linebreak
+Take in the following code.
+
+\begin{code}
+	Func “foo” → tuple
+	Data `a → “,” → int → tuple
+	foo → 5 , 5
+	foo → 5.5 ,  5
+\end{code}
+
+In the code above we have function “foo” that returns a tuple. 
+In one of the foo’s we return a “,” with two int’s and in the other we return a “,” of a float and an int. 
+They are both tuple according to “,” however we have no way to verify this in the syntax. 
+What if the definition of foo doesn’t work with a “,” that carries two int’s? 
+Normally we would specify in the declaration the exact type that foo requires but how do we do that when generics are involved?
+\linebreak
+Our solution was special type-application syntax.
+
+\begin{code}
+	Func “foo” → tuple<float>
+	Data `a → “,” → int → tuple<’a>
+	foo → 5.5 ,  5
+\end{code}
+
+We added a way to specify sub-types in data structures. 
+This way we have full control of what types a function needs. 
+It also gives us a way of abstraction. 
+For example, we can define an universal tuple.
+
+\begin{code}
+	Data `a → “,” → `b → tuple<`a `b>
+\end{code}
+
+This gives us a universal tuple that can be re-used to contain all sorts of types.
+
+\subsection{Type functions}
+
+In order to show all the functionality of a type function we first need to know about the three levels in which  MC variables can operate.
+
+-Terms 
+
+-Types
+
+-Kinds
+\linebreak
+Lets first look at the one we are most familiar with at the moment, the term.
+\linebreak
+In short, terms carry values. Below we can see an example of this.
+
+\begin{code}
+	a + 5 → b
+	int-float-add b 5.5 → res
+	------------
+	foo a → res
+\end{code}
+
+If we look at the function definition above we see an example of simple value manipulation. The value holder “b” equals value holder “a” plus five. Value holder “res” equals value holder “b” plus five point five.
+\linebreak
+All the value holders are terms and are able to execute on run-time because their type information is known.
+\linebreak
+Types on the other hand need to be executed on compile-time in order to get all the type information for the compiled program.
+\linebreak
+In the function declaration below we see a function with two types. 
+These types are constant and can not be changed by the compiler.
+
+\begin{code}
+	Func “foo” → int → float
+\end{code}
+
+However if we use a generic like so:
+
+\begin{code}
+	Func “bar” → `a → `a 
+\end{code}
+
+the types become variable and are now dependent on the function that calls “bar”.
+\linebreak
+You can already see the relation between terms and types.
+
+\begin{code}
+	Func “vas” → int
+	vas → 5
+\end{code}
+
+A term gets its identity from a type. For instance, 5 is a int, 5.5 is a float and “str” is a string.
+\linebreak
+Kind have a similar relation with types. Kinds are to types as types are to terms. 
+In order to explain this we will now look at type functions.
+\linebreak
+The example below shows both familiar syntax and new syntax. 
+We can still recognize that the code above consists of a declaration and definition. 
+what is new though are the keywords “Typefunc”, “Type” and “=>”.
+
+\begin{code}
+	TypeFunc Type => “*” => Type => Type
+	a * b => tuple<a b>
+\end{code}
+
+In the declaration we see that the keyword “TypeFunc” is used to start the declaration of a type function. Notice that the single arrow “→” that is normally used in declarations is replaced by a double arrow “=>”. The deference between these arrows signify if the code is supposed to be run-time or compile-time. And lastly we see the keyword “Type” which is used to tell that the type function “*” will take two types and return a type.
+\linebreak
+In short the keyword “Type” signifies the use of a kind.
+\linebreak
+Lets give a example of when this is useful. Remember back above with the generic data tuple:
+
+\begin{code}
+	Data `a → “,” → `b → tuple<`a `b>
+\end{code}
+
+we need to specify what the sub types of tuple are in order to make tuple generic. Now every time you want to use this generic tuple you need to give the sub types to tuple.
+
+\begin{code}
+	Func “foo” → int → int → tuple<int int>
+\end{code}
+
+This is still do able but when you are using more complex types like:
+
+\begin{code}
+	Func “bar” → tuple<int int> → tuple<tuple<int int> int> → tuple<tuple<int int> tuple<tuple<int int> int>>
+\end{code}
+
+things become tedious. Type functions offer a solution for this problem. For instance, if we use the type function “*” specified above:
+
+\begin{code}
+	Func “bar” int * int → (int * int ) * int → (int * int) * ((int * int) * int)
+\end{code}
+
+the declaration becomes more manageable.
+\linebreak
+As you can see we are using type functions in a declaration. It is because type functions are done on compile-time that they can manipulate type information.
+\linebreak
+Aside of manipulating type information type functions also have all the capabilities that a normal function has. Type functions are able to manipulate all the levels of MC, namely terms, types and kinds. As example:
+
+\begin{code}
+	TypeFunc “add” => int => int => int
+	add a b => a + b
+\end{code}
+
+not only works perfectly fine but also gets done on compile time. The ability to decide which code sould run on compile time can be useful for optimization purposes. 
+
+\subsection{Type aliases}
+
+Type aliases are to Data as type functions are to functions. Type alias is on compile-time and is capable of manipulating terms, types and kinds. So just like you can make a tuple with data, you can also make a tuple with a type alias. Like so:
+
+\begin{code}
+	TypeAlias Type => “ali-tuple” => Type => Type
+	a ali-tuple b => alituple<a b>
+\end{code}
+
+The difference between this tuple and the tuple we declared with data is that the tuple declared with an alias works on all levels of MC: terms, types and kinds. 
+
+
+\subsection{Modules}
+
+And lastly we look at modules.
+\linebreak
+Modules are created by a type function and can contain all the aforementioned syntax. Below we can see an example of a module being declared and defined.
+
+\begin{code}
+	TypeFunc “mod” => Module
+	Mod => Module {
+		Data “int-container” → int → intcontainer
+		Func “add-int-container” → intcontainer → int → intcontainer
+		a + b = c
+		int-container c → res
+		-----
+		add-int-container (int-container a) b → res
+	}
+\end{code}
+
+Here we can see a module “mod” being created. The functions and data inside a module can be called outside a module by use of the carret.
+
+\begin{code}
+	Foo a b → add-int-container^mod a b
+\end{code}
+
+As you can see the syntax is slightly different than you would expect. Instead of it being a namespace followed by a function name it is the other way around, a name and than a namespace.
+
+

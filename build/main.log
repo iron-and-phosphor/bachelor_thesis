@@ -1,0 +1,1295 @@
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Arch Linux) (preloaded format=xelatex 2016.2.14)  13 JUN 2016 03:18
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**main
+(./main.tex
+LaTeX2e <2015/10/01> patch level 2
+Babel <3.9m> and hyphenation patterns for 79 languages loaded.
+(/usr/share/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/share/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2010/09/12 v5.6 Page Geometry
+
+(/usr/share/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/share/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is not detected.
+)
+(/usr/share/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+(/usr/share/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count87
+\Gm@cntv=\count88
+\c@Gm@tempcnt=\count89
+\Gm@bindingoffset=\dimen103
+\Gm@wd@mp=\dimen104
+\Gm@odd@mp=\dimen105
+\Gm@even@mp=\dimen106
+\Gm@layoutwidth=\dimen107
+\Gm@layoutheight=\dimen108
+\Gm@layouthoffset=\dimen109
+\Gm@layoutvoffset=\dimen110
+\Gm@dimlist=\toks15
+)
+(/usr/share/texmf-dist/tex/latex/pdfpages/pdfpages.sty
+Package: pdfpages 2015/09/18 v0.5d Insert pages of external PDF documents (AM)
+
+(/usr/share/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(/usr/share/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count90
+\calc@Bcount=\count91
+\calc@Adimen=\dimen111
+\calc@Bdimen=\dimen112
+\calc@Askip=\skip43
+\calc@Bskip=\skip44
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count92
+\calc@Cskip=\skip45
+)
+(/usr/share/texmf-dist/tex/latex/eso-pic/eso-pic.sty
+Package: eso-pic 2015/07/21 v2.0g eso-pic (RN)
+
+(/usr/share/texmf-dist/tex/generic/oberdiek/atbegshi.sty
+Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
+
+(/usr/share/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/usr/share/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+))
+(/usr/share/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+
+(/usr/share/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package xcolor Info: Driver file: xetex.def on input line 225.
+
+(/usr/share/texmf-dist/tex/xelatex/xetex-def/xetex.def
+File: xetex.def 2015/09/11 v4.06 LaTeX color/graphics driver for XeTeX (TeX Liv
+e/RRM/JK)
+)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+))
+(/usr/share/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2014/10/28 v1.0p Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: xetex.def on input line 94.
+)
+\Gin@req@height=\dimen113
+\Gin@req@width=\dimen114
+)
+\AM@pagewidth=\dimen115
+\AM@pageheight=\dimen116
+
+(/usr/share/texmf-dist/tex/latex/pdfpages/ppxetex.def
+File: ppxetex.def 2015/09/18 v0.5d Pdfpages driver for XeTeX (AM)
+)
+\AM@pagebox=\box26
+\AM@toc@title=\toks16
+\c@AM@survey=\count93
+\AM@templatesizebox=\box27
+)
+(/usr/share/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2015/08/19 v1.8n multicolumn formatting (FMi)
+\c@tracingmulticols=\count94
+\mult@box=\box28
+\multicol@leftmargin=\dimen117
+\c@unbalance=\count95
+\c@collectmore=\count96
+\doublecol@number=\count97
+\multicoltolerance=\count98
+\multicolpretolerance=\count99
+\full@width=\dimen118
+\page@free=\dimen119
+\premulticols=\dimen120
+\postmulticols=\dimen121
+\multicolsep=\skip46
+\multicolbaselineskip=\skip47
+\partial@page=\box29
+\last@line=\box30
+\maxbalancingoverflow=\dimen122
+\mult@rightbox=\box31
+\mult@grightbox=\box32
+\mult@gfirstbox=\box33
+\mult@firstbox=\box34
+\@tempa=\box35
+\@tempa=\box36
+\@tempa=\box37
+\@tempa=\box38
+\@tempa=\box39
+\@tempa=\box40
+\@tempa=\box41
+\@tempa=\box42
+\@tempa=\box43
+\@tempa=\box44
+\@tempa=\box45
+\@tempa=\box46
+\@tempa=\box47
+\@tempa=\box48
+\@tempa=\box49
+\@tempa=\box50
+\@tempa=\box51
+\c@columnbadness=\count100
+\c@finalcolumnbadness=\count101
+\last@try=\dimen123
+\multicolovershoot=\dimen124
+\multicolundershoot=\dimen125
+\mult@nat@firstbox=\box52
+\colbreak@box=\box53
+\mc@col@check@num=\count102
+)
+(/usr/share/texmf-dist/tex/latex/titlesec/titlesec.sty
+Package: titlesec 2011/12/15 v2.10.0 Sectioning titles
+\ttl@box=\box54
+\beforetitleunit=\skip48
+\aftertitleunit=\skip49
+\ttl@plus=\dimen126
+\ttl@minus=\dimen127
+\ttl@toksa=\toks17
+\titlewidth=\dimen128
+\titlewidthlast=\dimen129
+\titlewidthfirst=\dimen130
+)
+(/usr/share/texmf-dist/tex/latex/fontspec/fontspec.sty
+Package: fontspec 2015/09/24 v2.4e Font selection for XeLaTeX and LuaLaTeX
+
+(/usr/share/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2015/11/04 v6224 L3 programming layer (loader) 
+
+(/usr/share/texmf-dist/tex/latex/l3kernel/expl3-code.tex
+Package: expl3 2015/11/04 v6224 L3 programming layer (code) 
+L3 Module: l3bootstrap 2015/10/18 v6213 L3 Bootstrap code
+L3 Module: l3names 2015/11/03 v6220 L3 Namespace for primitives
+L3 Module: l3basics 2015/09/22 v6033 L3 Basic definitions
+L3 Module: l3expan 2015/09/10 v5983 L3 Argument expansion
+L3 Module: l3tl 2015/09/29 v6121 L3 Token lists
+L3 Module: l3str 2015/09/20 v6021 L3 Strings
+L3 Module: l3seq 2015/08/05 v5777 L3 Sequences and stacks
+L3 Module: l3int 2015/09/25 v6089 L3 Integers
+\c_max_int=\count103
+\l_tmpa_int=\count104
+\l_tmpb_int=\count105
+\g_tmpa_int=\count106
+\g_tmpb_int=\count107
+L3 Module: l3quark 2015/08/17 v5855 L3 Quarks
+L3 Module: l3prg 2015/11/01 v6216 L3 Control structures
+\g__prg_map_int=\count108
+L3 Module: l3clist 2015/09/02 v5901 L3 Comma separated lists
+L3 Module: l3token 2015/09/28 v6114 L3 Experimental token manipulation
+L3 Module: l3prop 2015/08/05 v5777 L3 Property lists
+L3 Module: l3msg 2015/09/28 v6113 L3 Messages
+L3 Module: l3file 2015/09/23 v6037 L3 File and I/O operations
+\l_iow_line_count_int=\count109
+\l__iow_target_count_int=\count110
+\l__iow_current_line_int=\count111
+\l__iow_current_word_int=\count112
+\l__iow_current_indentation_int=\count113
+L3 Module: l3skip 2015/09/25 v6089 L3 Dimensions and skips
+\c_zero_dim=\dimen131
+\c_max_dim=\dimen132
+\l_tmpa_dim=\dimen133
+\l_tmpb_dim=\dimen134
+\g_tmpa_dim=\dimen135
+\g_tmpb_dim=\dimen136
+\c_zero_skip=\skip50
+\c_max_skip=\skip51
+\l_tmpa_skip=\skip52
+\l_tmpb_skip=\skip53
+\g_tmpa_skip=\skip54
+\g_tmpb_skip=\skip55
+\c_zero_muskip=\muskip10
+\c_max_muskip=\muskip11
+\l_tmpa_muskip=\muskip12
+\l_tmpb_muskip=\muskip13
+\g_tmpa_muskip=\muskip14
+\g_tmpb_muskip=\muskip15
+L3 Module: l3keys 2015/09/23 v6037 L3 Key-value interfaces
+\g__keyval_level_int=\count114
+\l_keys_choice_int=\count115
+L3 Module: l3fp 2015/08/25 v5890 L3 Floating points
+\c__fp_leading_shift_int=\count116
+\c__fp_middle_shift_int=\count117
+\c__fp_trailing_shift_int=\count118
+\c__fp_big_leading_shift_int=\count119
+\c__fp_big_middle_shift_int=\count120
+\c__fp_big_trailing_shift_int=\count121
+\c__fp_Bigg_leading_shift_int=\count122
+\c__fp_Bigg_middle_shift_int=\count123
+\c__fp_Bigg_trailing_shift_int=\count124
+L3 Module: l3box 2015/08/09 v5822 L3 Experimental boxes
+\c_empty_box=\box55
+\l_tmpa_box=\box56
+\l_tmpb_box=\box57
+\g_tmpa_box=\box58
+\g_tmpb_box=\box59
+L3 Module: l3coffins 2015/08/06 v5789 L3 Coffin code layer
+\l__coffin_internal_box=\box60
+\l__coffin_internal_dim=\dimen137
+\l__coffin_offset_x_dim=\dimen138
+\l__coffin_offset_y_dim=\dimen139
+\l__coffin_x_dim=\dimen140
+\l__coffin_y_dim=\dimen141
+\l__coffin_x_prime_dim=\dimen142
+\l__coffin_y_prime_dim=\dimen143
+\c_empty_coffin=\box61
+\l__coffin_aligned_coffin=\box62
+\l__coffin_aligned_internal_coffin=\box63
+\l_tmpa_coffin=\box64
+\l_tmpb_coffin=\box65
+\l__coffin_display_coffin=\box66
+\l__coffin_display_coord_coffin=\box67
+\l__coffin_display_pole_coffin=\box68
+\l__coffin_display_offset_dim=\dimen144
+\l__coffin_display_x_dim=\dimen145
+\l__coffin_display_y_dim=\dimen146
+L3 Module: l3color 2014/08/23 v5354 L3 Experimental color support
+L3 Module: l3candidates 2015/11/01 v6216 L3 Experimental additions to l3kernel
+\l__box_top_dim=\dimen147
+\l__box_bottom_dim=\dimen148
+\l__box_left_dim=\dimen149
+\l__box_right_dim=\dimen150
+\l__box_top_new_dim=\dimen151
+\l__box_bottom_new_dim=\dimen152
+\l__box_left_new_dim=\dimen153
+\l__box_right_new_dim=\dimen154
+\l__box_internal_box=\box69
+\l__coffin_bounding_shift_dim=\dimen155
+\l__coffin_left_corner_dim=\dimen156
+\l__coffin_right_corner_dim=\dimen157
+\l__coffin_bottom_corner_dim=\dimen158
+\l__coffin_top_corner_dim=\dimen159
+\l__coffin_scaled_total_height_dim=\dimen160
+\l__coffin_scaled_width_dim=\dimen161
+L3 Module: l3sys 2015/09/25 v6087 L3 Experimental system/runtime functions
+L3 Module: l3luatex 2015/09/10 v5983 L3 Experimental LuaTeX-specific functions
+)
+(/usr/share/texmf-dist/tex/latex/l3kernel/l3unicode-data.def
+File: l3unicode-data.def 2015/07/20 v5676 L3 Unicode data
+)
+(/usr/share/texmf-dist/tex/latex/l3kernel/l3xdvipdfmx.def
+File: l3xdvidpfmx.def 2015/09/10 v5983 L3 Experimental driver: xdvipdfmx
+))
+(/usr/share/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+Package: xparse 2015/11/04 v6224 L3 Experimental document command parser
+\l__xparse_current_arg_int=\count125
+\l__xparse_m_args_int=\count126
+\l__xparse_mandatory_args_int=\count127
+\l__xparse_processor_int=\count128
+\l__xparse_v_nesting_int=\count129
+)
+\l_fontspec_script_int=\count130
+\l_fontspec_language_int=\count131
+\l_fontspec_strnum_int=\count132
+\l__fontspec_tmpa_dim=\dimen162
+\l__fontspec_tmpb_dim=\dimen163
+\l__fontspec_tmpc_dim=\dimen164
+
+(/usr/share/texmf-dist/tex/latex/fontspec/fontspec-patches.sty
+Package: fontspec-patches 2015/09/24 v2.4e Font selection for XeLaTeX and LuaLa
+TeX
+LaTeX Info: Redefining \em on input line 49.
+LaTeX Info: Redefining \emph on input line 57.
+LaTeX Info: Redefining \- on input line 60.
+.................................................
+. LaTeX info: "xparse/redefine-command"
+. 
+. Redefining command \oldstylenums with sig. 'm' on line 155.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \liningnums with sig. 'm' on line 159.
+.................................................
+)
+(/usr/share/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
+Package: fontspec-xetex 2015/09/24 v2.4e Font selection for XeLaTeX and LuaLaTe
+X
+
+(/usr/share/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+(/usr/share/texmf-dist/tex/latex/euenc/eu1enc.def
+File: eu1enc.def 2010/05/27 v0.1h Experimental Unicode font encodings
+)
+LaTeX Font Info:    Try loading font information for EU1+lmr on input line 105.
+
+
+(/usr/share/texmf-dist/tex/latex/euenc/eu1lmr.fd
+File: eu1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+))
+(/usr/share/texmf-dist/tex/xelatex/xunicode/xunicode.sty
+File: xunicode.sty 2011/09/09 v0.981 provides access to latin accents and many 
+other characters in Unicode lower plane
+
+(/usr/share/texmf-dist/tex/latex/tipa/t3enc.def
+File: t3enc.def 2001/12/31 T3 encoding
+LaTeX Font Info:    Try loading font information for EU1+lmss on input line 357
+.
+
+(/usr/share/texmf-dist/tex/latex/euenc/eu1lmss.fd
+File: eu1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
+))
+\tipaTiiicode=\count133
+\tipasavetokens=\toks18
+\tipachecktokens=\toks19
+)
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \__fontspec_post_arg:w with sig. 'mmO{}' on line 42.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \fontspec with sig. 'om' on line 44.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setmainfont with sig. 'om' on line 54.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setsansfont with sig. 'om' on line 64.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setmonofont with sig. 'om' on line 74.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setmathrm with sig. 'om' on line 88.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setboldmathrm with sig. 'om' on line 96.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setmathsf with sig. 'om' on line 104.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setmathtt with sig. 'om' on line 112.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newfontfamily with sig. 'mom' on line 126.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newfontface with sig. 'mom' on line 141.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \defaultfontfeatures with sig. 't+om' on line 155.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \addfontfeatures with sig. 'm' on line 210.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newfontfeature with sig. 'mm' on line 221.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newAATfeature with sig. 'mmmm' on line 229.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newopentypefeature with sig. 'mmm' on line 237.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \aliasfontfeature with sig. 'mm' on line 258.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \aliasfontfeatureoption with sig. 'mmm' on line 267.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newfontscript with sig. 'mm' on line 272.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newfontlanguage with sig. 'mm' on line 298.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareFontsExtensions with sig. 'm' on line 318.
+.................................................
+\l__fontspec_tmp_int=\count134
+LaTeX Info: Redefining \itshape on input line 2227.
+LaTeX Info: Redefining \slshape on input line 2232.
+LaTeX Info: Redefining \scshape on input line 2237.
+LaTeX Info: Redefining \upshape on input line 2242.
+
+(/usr/share/texmf-dist/tex/latex/fontspec/fontspec.cfg)))
+\g__file_internal_ior=\read1
+\g__fontspec_family_DejaVuSerif_int=\count135
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'DejaVuSerif(0)' created for font 'DejaVu Serif' with options
+. [Ligatures=TeX,BoldFont=DejaVu Sans Bold].
+. 
+. This font family consists of the following shapes:
+. 
+. * 'normal' with NFSS spec.:
+. <->"DejaVu Serif/OT:script=latn;language=DFLT;mapping=tex-text;"
+. 
+. * 'small caps' with NFSS spec.:
+. 
+. and font adjustment code:
+. 
+. 
+. * 'bold' with NFSS spec.:
+. <->"DejaVu Sans Bold/OT:script=latn;language=DFLT;mapping=tex-text;"
+. 
+. * 'bold small caps' with NFSS spec.:
+. 
+. and font adjustment code:
+. 
+. 
+. * 'italic' with NFSS spec.:
+. <->"DejaVu Serif/I/OT:script=latn;language=DFLT;mapping=tex-text;"
+. 
+. * 'small caps' with NFSS spec.:
+. 
+. and font adjustment code:
+. 
+. 
+. * 'bold italic' with NFSS spec.:
+. <->"DejaVu Sans Bold/I/OT:script=latn;language=DFLT;mapping=tex-text;"
+. 
+. * 'bold small caps' with NFSS spec.:
+. 
+. and font adjustment code:
+. 
+.................................................
+\g__fontspec_family_DejaVuSansMono_int=\count136
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'DejaVuSansMono(0)' created for font 'DejaVu Sans Mono' with
+. options [WordSpace={1,0,0},PunctuationSpace=WordSpace].
+. 
+. This font family consists of the following shapes:
+. 
+. * 'normal' with NFSS spec.:
+. <->"DejaVu Sans Mono/OT:script=latn;language=DFLT;"
+. 
+. * 'small caps' with NFSS spec.:
+. 
+. and font adjustment code:
+. \fontdimen 2\font =1\fontdimen 2\font \fontdimen 3\font =0\fontdimen 3\font
+. \fontdimen 4\font =0\fontdimen 4\font \fontdimen 7\font =0\fontdimen 2\font 
+. 
+. * 'bold' with NFSS spec.:
+. <->"DejaVu Sans Mono/B/OT:script=latn;language=DFLT;"
+. 
+. * 'bold small caps' with NFSS spec.:
+. 
+. and font adjustment code:
+. \fontdimen 2\font =1\fontdimen 2\font \fontdimen 3\font =0\fontdimen 3\font
+. \fontdimen 4\font =0\fontdimen 4\font \fontdimen 7\font =0\fontdimen 2\font 
+. 
+. * 'italic' with NFSS spec.:
+. <->"DejaVu Sans Mono/I/OT:script=latn;language=DFLT;"
+. 
+. * 'small caps' with NFSS spec.:
+. 
+. and font adjustment code:
+. \fontdimen 2\font =1\fontdimen 2\font \fontdimen 3\font =0\fontdimen 3\font
+. \fontdimen 4\font =0\fontdimen 4\font \fontdimen 7\font =0\fontdimen 2\font 
+. 
+. * 'bold italic' with NFSS spec.:
+. <->"DejaVu Sans Mono/BI/OT:script=latn;language=DFLT;"
+. 
+. * 'bold small caps' with NFSS spec.:
+. 
+. and font adjustment code:
+. \fontdimen 2\font =1\fontdimen 2\font \fontdimen 3\font =0\fontdimen 3\font
+. \fontdimen 4\font =0\fontdimen 4\font \fontdimen 7\font =0\fontdimen 2\font 
+.................................................
+
+(/usr/share/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count137
+\lst@gtempboxa=\box70
+\lst@token=\toks20
+\lst@length=\count138
+\lst@currlwidth=\dimen165
+\lst@column=\count139
+\lst@pos=\count140
+\lst@lostspace=\dimen166
+\lst@width=\dimen167
+\lst@newlines=\count141
+\lst@lineno=\count142
+\lst@maxwidth=\dimen168
+
+(/usr/share/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
+\c@lstnumber=\count143
+\lst@skipnumbers=\count144
+\lst@framebox=\box71
+)
+(/usr/share/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2015/06/04 1.6 listings configuration
+))
+Package: listings 2015/06/04 1.6 (Carsten Heinz)
+
+(/usr/share/texmf-dist/tex/latex/biblatex/biblatex.sty
+Package: biblatex 2015/10/21 v3.1 programmable bibliographies (PK/JW/AB)
+
+(/usr/share/texmf-dist/tex/latex/biblatex/biblatex2.sty
+Package: biblatex2 2015/10/21 v3.1 programmable bibliographies (biber) (PK/JW/A
+B)
+
+(/usr/share/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2015/08/02 v2.2a e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count145
+)
+(/usr/share/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+(/usr/share/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+(/usr/share/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+
+(/usr/share/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+(/usr/share/texmf-dist/tex/latex/logreq/logreq.sty
+Package: logreq 2010/08/04 v1.0 xml request logger
+\lrq@indent=\count146
+
+(/usr/share/texmf-dist/tex/latex/logreq/logreq.def
+File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
+))
+(/usr/share/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip16
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+\c@tabx@nest=\count147
+\c@listtotal=\count148
+\c@listcount=\count149
+\c@liststart=\count150
+\c@liststop=\count151
+\c@citecount=\count152
+\c@citetotal=\count153
+\c@multicitecount=\count154
+\c@multicitetotal=\count155
+\c@instcount=\count156
+\c@maxnames=\count157
+\c@minnames=\count158
+\c@maxitems=\count159
+\c@minitems=\count160
+\c@citecounter=\count161
+\c@savedcitecounter=\count162
+\c@uniquelist=\count163
+\c@uniquename=\count164
+\c@refsection=\count165
+\c@refsegment=\count166
+\c@maxextratitle=\count167
+\c@maxextratitleyear=\count168
+\c@maxextrayear=\count169
+\c@maxextraalpha=\count170
+\c@abbrvpenalty=\count171
+\c@highnamepenalty=\count172
+\c@lownamepenalty=\count173
+\c@maxparens=\count174
+\c@parenlevel=\count175
+\blx@tempcnta=\count176
+\blx@tempcntb=\count177
+\blx@tempcntc=\count178
+\blx@maxsection=\count179
+\blx@maxsegment@0=\count180
+\blx@notetype=\count181
+\blx@parenlevel@text=\count182
+\blx@parenlevel@foot=\count183
+\blx@sectionciteorder@0=\count184
+\labelnumberwidth=\skip56
+\labelalphawidth=\skip57
+\biblabelsep=\skip58
+\bibitemsep=\skip59
+\bibnamesep=\skip60
+\bibinitsep=\skip61
+\bibparsep=\skip62
+\bibhang=\skip63
+\blx@bcfin=\read2
+\blx@bcfout=\write3
+\c@mincomprange=\count185
+\c@maxcomprange=\count186
+\c@mincompwidth=\count187
+Package biblatex Info: Trying to load biblatex default data model...
+Package biblatex Info: ... file 'blx-dm.def' found.
+
+(/usr/share/texmf-dist/tex/latex/biblatex/blx-dm.def)
+Package biblatex Info: Trying to load biblatex style data model...
+Package biblatex Info: ... file 'verbose.dbx' not found.
+Package biblatex Info: Trying to load biblatex custom data model...
+Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
+\c@afterword=\count188
+\c@savedafterword=\count189
+\c@annotator=\count190
+\c@savedannotator=\count191
+\c@author=\count192
+\c@savedauthor=\count193
+\c@bookauthor=\count194
+\c@savedbookauthor=\count195
+\c@commentator=\count196
+\c@savedcommentator=\count197
+\c@editor=\count198
+\c@savededitor=\count199
+\c@editora=\count266
+\c@savededitora=\count267
+\c@editorb=\count268
+\c@savededitorb=\count269
+\c@editorc=\count270
+\c@savededitorc=\count271
+\c@foreword=\count272
+\c@savedforeword=\count273
+\c@holder=\count274
+\c@savedholder=\count275
+\c@introduction=\count276
+\c@savedintroduction=\count277
+\c@namea=\count278
+\c@savednamea=\count279
+\c@nameb=\count280
+\c@savednameb=\count281
+\c@namec=\count282
+\c@savednamec=\count283
+\c@translator=\count284
+\c@savedtranslator=\count285
+\c@shortauthor=\count286
+\c@savedshortauthor=\count287
+\c@shorteditor=\count288
+\c@savedshorteditor=\count289
+\c@labelname=\count290
+\c@savedlabelname=\count291
+\c@institution=\count292
+\c@savedinstitution=\count293
+\c@lista=\count294
+\c@savedlista=\count295
+\c@listb=\count296
+\c@savedlistb=\count297
+\c@listc=\count298
+\c@savedlistc=\count299
+\c@listd=\count300
+\c@savedlistd=\count301
+\c@liste=\count302
+\c@savedliste=\count303
+\c@listf=\count304
+\c@savedlistf=\count305
+\c@location=\count306
+\c@savedlocation=\count307
+\c@organization=\count308
+\c@savedorganization=\count309
+\c@origlocation=\count310
+\c@savedoriglocation=\count311
+\c@origpublisher=\count312
+\c@savedorigpublisher=\count313
+\c@publisher=\count314
+\c@savedpublisher=\count315
+\c@language=\count316
+\c@savedlanguage=\count317
+\c@pageref=\count318
+\c@savedpageref=\count319
+\shorthandwidth=\skip64
+\shortjournalwidth=\skip65
+\shortserieswidth=\skip66
+\shorttitlewidth=\skip67
+\shortauthorwidth=\skip68
+\shorteditorwidth=\skip69
+Package biblatex Info: Trying to load compatibility code...
+Package biblatex Info: ... file 'blx-compat.def' found.
+
+(/usr/share/texmf-dist/tex/latex/biblatex/blx-compat.def
+File: blx-compat.def 2015/10/21 v3.1 biblatex compatibility (PK/JW/AB)
+)
+Package biblatex Info: Trying to load generic definitions...
+Package biblatex Info: ... file 'biblatex.def' found.
+
+(/usr/share/texmf-dist/tex/latex/biblatex/biblatex.def
+File: biblatex.def 
+\c@textcitecount=\count320
+\c@textcitetotal=\count321
+\c@textcitemaxnames=\count322
+\c@biburlnumpenalty=\count323
+\c@biburlucpenalty=\count324
+\c@biburllcpenalty=\count325
+\c@smartand=\count326
+)
+Package biblatex Info: Trying to load bibliography style 'verbose'...
+Package biblatex Info: ... file 'verbose.bbx' found.
+
+(/usr/share/texmf-dist/tex/latex/biblatex/bbx/verbose.bbx
+File: verbose.bbx 2015/10/21 v3.1 biblatex bibliography style (PK/JW/AB)
+Package biblatex Info: Trying to load bibliography style 'authortitle'...
+Package biblatex Info: ... file 'authortitle.bbx' found.
+
+(/usr/share/texmf-dist/tex/latex/biblatex/bbx/authortitle.bbx
+File: authortitle.bbx 2015/10/21 v3.1 biblatex bibliography style (PK/JW/AB)
+Package biblatex Info: Trying to load bibliography style 'standard'...
+Package biblatex Info: ... file 'standard.bbx' found.
+
+(/usr/share/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
+File: standard.bbx 2015/10/21 v3.1 biblatex bibliography style (PK/JW/AB)
+\c@bbx:relatedcount=\count327
+\c@bbx:relatedtotal=\count328
+)))
+Package biblatex Info: Trying to load citation style 'verbose'...
+Package biblatex Info: ... file 'verbose.cbx' found.
+
+(/usr/share/texmf-dist/tex/latex/biblatex/cbx/verbose.cbx
+File: verbose.cbx 2015/10/21 v3.1 biblatex citation style (PK/JW/AB)
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\parencite'.
+Package biblatex Info: Redefining '\footcite'.
+Package biblatex Info: Redefining '\footcitetext'.
+Package biblatex Info: Redefining '\smartcite'.
+Package biblatex Info: Redefining '\textcite'.
+Package biblatex Info: Redefining '\textcites'.
+)
+Package biblatex Info: Trying to load configuration file...
+Package biblatex Info: ... file 'biblatex.cfg' found.
+
+(/usr/share/texmf-dist/tex/latex/biblatex/biblatex.cfg
+File: biblatex.cfg 
+)))
+Package biblatex Info: Trying to load language 'english'...
+Package biblatex Info: ... file 'english.lbx' found.
+
+(/usr/share/texmf-dist/tex/latex/biblatex/lbx/english.lbx
+File: english.lbx 2015/10/21 v3.1 biblatex localization (PK/JW/AB)
+)
+\@quotelevel=\count329
+\@quotereset=\count330
+ (./main.aux)
+\openout1 = `main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 39.
+LaTeX Font Info:    Try loading font information for T3+cmr on input line 39.
+
+(/usr/share/texmf-dist/tex/latex/tipa/t3cmr.fd
+File: t3cmr.fd 2001/12/31 TIPA font definitions
+)
+LaTeX Font Info:    ... okay on input line 39.
+
+*geometry* detected driver: xetex
+*geometry* verbose mode - [ preamble ] result:
+* driver: xetex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(89.62709pt, 418.25368pt, 89.6271pt)
+* v-part:(T,H,B)=(101.40665pt, 591.5302pt, 152.11pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=418.25368pt
+* \textheight=591.5302pt
+* \oddsidemargin=17.3571pt
+* \evensidemargin=17.3571pt
+* \topmargin=-7.86334pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=57.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+\AtBeginShipoutBox=\box72
+(/usr/share/texmf-dist/tex/latex/oberdiek/pdflscape.sty
+Package: pdflscape 2008/08/11 v0.10 Display of landscape pages in PDF (HO)
+
+(/usr/share/texmf-dist/tex/latex/graphics/lscape.sty
+Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: dvipdfm (xetex) on input line 98.
+
+)
+.................................................
+. fontspec info: "setup-math"
+. 
+. Adjusting the maths setup (use [no-math] to avoid this).
+.................................................
+\symlegacymaths=\mathgroup4
+LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 39.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 39.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 39.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 39.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 39.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 39.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 39.
+LaTeX Font Info:    Redeclaring math accent \check on input line 39.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 39.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 39.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 39.
+LaTeX Font Info:    Redeclaring math symbol \colon on input line 39.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 39.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 39.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 39.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 39.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 39.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 39.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 39.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 39.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 39.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 39.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 39.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 39.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 39.
+LaTeX Font Info:    Encoding `OT1' has changed to `EU1' for symbol font
+(Font)              `operators' in the math version `normal' on input line 39.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> EU1/DejaVuSerif(0)/m/n on input line 39
+.
+LaTeX Font Info:    Encoding `OT1' has changed to `EU1' for symbol font
+(Font)              `operators' in the math version `bold' on input line 39.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> EU1/DejaVuSerif(0)/m/n on input line 3
+9.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  EU1/DejaVuSerif(0)/m/n --> EU1/DejaVuSerif(0)/m/n on in
+put line 39.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> EU1/DejaVuSerif(0)/m/it on input line 
+39.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> EU1/DejaVuSerif(0)/bx/n on input line 
+39.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> EU1/lmss/m/n on input line 39.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> EU1/DejaVuSansMono(0)/m/n on input lin
+e 39.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  EU1/DejaVuSerif(0)/m/n --> EU1/DejaVuSerif(0)/bx/n on i
+nput line 39.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> EU1/DejaVuSerif(0)/bx/it on input lin
+e 39.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> EU1/lmss/bx/n on input line 39.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> EU1/DejaVuSansMono(0)/bx/n on input li
+ne 39.
+\c@lstlisting=\count331
+Package biblatex Info: XeTeX detected.
+(biblatex)             Assuming input encoding 'utf8'.
+Package biblatex Info: Automatic encoding selection.
+(biblatex)             Assuming data encoding 'utf8'.
+\openout3 = `main.bcf'.
+
+Package biblatex Info: Trying to load bibliographic data...
+Package biblatex Info: ... file 'main.bbl' found.
+ (./main.bbl)
+Package biblatex Info: Reference section=0 on input line 39.
+Package biblatex Info: Reference segment=0 on input line 39.
+File: build/cover.pdf Graphic file (type QTm)
+
+<use  "build/cover.pdf" >
+File: build/cover.pdf Graphic file (type QTm)
+ <use  "build/cover.pdf" >
+File: build/cover.pdf Graphic file (type QTm)
+
+<use  "build/cover.pdf"  page1>
+File: build/cover.pdf Graphic file (type QTm)
+ <use  "build/cover.pdf"  page1>
+File: build/cover.pdf Graphic file (type QTm)
+
+<use  "build/cover.pdf"  page1>
+File: build/cover.pdf Graphic file (type QTm)
+ <use  "build/cover.pdf"  page1>
+File: build/cover.pdf Graphic file (type QTm)
+
+<use  "build/cover.pdf"  page1> [1
+
+] (./abstract.tex) [2] (./main.toc
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 5.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 5.
+ [3])
+\tf@toc=\write4
+\openout4 = `main.toc'.
+
+
+[4] (./intro.tex
+Underfull \hbox (badness 10000) in paragraph at lines 13--19
+\EU1/DejaVuSerif(0)/m/n/10 industry making the future of Rotterdam[].
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 22--26
+\EU1/DejaVuSerif(0)/m/n/10 Maggiore and Pieter Spronck.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 35--49
+\EU1/DejaVuSerif(0)/m/n/10 code in F# are now 300 lines in MC [].
+ []
+
+) [1] (./questions.tex) (./mc.tex [2]
+Underfull \hbox (badness 10000) in paragraph at lines 14--20
+\EU1/DejaVuSerif(0)/m/n/10 type of the function.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 46--49
+\EU1/DejaVuSerif(0)/m/n/10 rated with a horizontal line.
+ []
+
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 102--107
+\EU1/DejaVuSerif(0)/m/n/10 content to new value names.
+ []
+
+[4]
+Underfull \hbox (badness 6927) in paragraph at lines 140--145
+\EU1/DejaVuSerif(0)/m/n/10 This means that one declaration can take to multiple
+ type signatures.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 160--168
+\EU1/DejaVuSerif(0)/m/n/10 tion holds all the type information we need.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 173--176
+\EU1/DejaVuSerif(0)/m/n/10 float which conflicts with the int that “bar” is exp
+ecting.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 199--206
+\EU1/DejaVuSerif(0)/m/n/10 how do we do that when generics are involved?
+ []
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 232--237
+[]\EU1/DejaVuSerif(0)/m/n/10 -Kinds
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 245--253
+\EU1/DejaVuSerif(0)/m/n/10 “res” equals value holder “b” plus five point five.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 245--253
+\EU1/DejaVuSerif(0)/m/n/10 type information is known.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 245--253
+\EU1/DejaVuSerif(0)/m/n/10 type information for the compiled program.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 264--267
+\EU1/DejaVuSerif(0)/m/n/10 “bar”.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 273--281
+\EU1/DejaVuSerif(0)/m/n/10 is a string.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 273--281
+\EU1/DejaVuSerif(0)/m/n/10 order to explain this we will now look at type funct
+ions.
+ []
+
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 287--292
+\EU1/DejaVuSerif(0)/m/n/10 types and return a type.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 287--292
+\EU1/DejaVuSerif(0)/m/n/10 In short the keyword “Type” signifies the use of a k
+ind.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 315--320
+[]\EU1/DejaVuSerif(0)/m/n/10 the declaration becomes more manageable.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 342--345
+[]\EU1/DejaVuSerif(0)/m/n/10 And lastly we look at modules.
+ []
+
+[7]) [8] (./research.tex
+Underfull \hbox (badness 10000) in paragraph at lines 5--16
+\EU1/DejaVuSerif(0)/m/n/10 not chosen for creating the MetaCasanova compiler.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5--16
+\EU1/DejaVuSerif(0)/m/n/10 list of tokens as result.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5--16
+\EU1/DejaVuSerif(0)/m/n/10 error occurred and the kind of error.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5--16
+\EU1/DejaVuSerif(0)/m/n/10 types to check for validity of the code on compile t
+ime.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--24
+\EU1/DejaVuSerif(0)/m/n/10 readable and maintainable.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--24
+\EU1/DejaVuSerif(0)/m/n/10 in the future.
+ []
+
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 27--30
+\EU1/DejaVuSerif(0)/m/n/10 its generating nature it leaves little room for cust
+omization.
+ []
+
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 68--73
+\EU1/DejaVuSerif(0)/m/n/10 function using different types.
+ []
+
+[11]
+Underfull \hbox (badness 1231) in paragraph at lines 117--122
+[]\EU1/DejaVuSerif(0)/m/n/10 We will now analyze the example code and parse tre
+e in further detail.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 117--122
+\EU1/DejaVuSerif(0)/m/n/10 newline.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 125--130
+\EU1/DejaVuSerif(0)/m/n/10 to know about monads.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 125--130
+\EU1/DejaVuSerif(0)/m/n/10 function into a new container.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 136--139
+\EU1/DejaVuSerif(0)/m/n/10 ment and returns a “Monad” of the same generic type.
+
+ []
+
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 156--159
+\EU1/DejaVuSerif(0)/m/n/10 mer.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 181--184
+\EU1/DejaVuSerif(0)/m/n/10 building complex parsers more intuitive.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 189--192
+\EU1/DejaVuSerif(0)/m/n/10 or if the parser monad succeeded or not.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 197--203
+\EU1/DejaVuSerif(0)/m/n/10 Error on the other hand represents a monad that has 
+failed.
+ []
+
+[13]
+Underfull \hbox (badness 10000) in paragraph at lines 213--216
+\EU1/DejaVuSerif(0)/m/n/10 “p” and creates the next parser in the bind sequence
+ with it.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 238--243
+\EU1/DejaVuSerif(0)/m/n/10 number because we moved a column to the right.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 238--243
+\EU1/DejaVuSerif(0)/m/n/10 parsers.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 258--261
+\EU1/DejaVuSerif(0)/m/n/10 a few examples.
+ []
+
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 273--276
+\EU1/DejaVuSerif(0)/m/n/10 which returns both results in tuple form if both par
+sers succeed.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 288--293
+\EU1/DejaVuSerif(0)/m/n/10 combinators.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 304--309
+\EU1/DejaVuSerif(0)/m/n/10 char (‘-’) will return a list of units.
+ []
+
+[15]
+Underfull \hbox (badness 10000) in paragraph at lines 325--328
+\EU1/DejaVuSerif(0)/m/n/10 means that it takes multiple passes to parse a singl
+e file.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 335--338
+[]\EU1/DejaVuSerif(0)/m/n/10 -Function definitions.
+ []
+
+) [16] (./results.tex
+Underfull \hbox (badness 10000) in paragraph at lines 10--13
+\EU1/DejaVuSerif(0)/m/n/10 who did not initially design the structure of the co
+mpiler.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 15--20
+\EU1/DejaVuSerif(0)/m/n/10 self is not bug-free.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 22--25
+\EU1/DejaVuSerif(0)/m/n/10 for the programmer of MC.
+ []
+
+) (./conclusion.tex [17] [18]) [19] (./recommendations.tex) (./evaluation.tex
+[20]) [21] (./main.aux)
+Package logreq Info: Writing requests to 'main.run.xml'.
+\openout1 = `main.run.xml'.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 23137 strings out of 493668
+ 442517 string characters out of 6150756
+ 909978 words of memory out of 5000000
+ 26302 multiletter control sequences out of 15000+600000
+ 4304 words of font info for 40 fonts, out of 8000000 for 9000
+ 1328 hyphenation exceptions out of 8191
+ 44i,18n,61p,10404b,992s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on main.pdf (25 pages).

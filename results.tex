@@ -1,0 +1,38 @@
+\section{Results}
+
+In this chapter we will look at an overview of what has been achieved during this project.
+
+\subsection{Accomplishing requirements}
+
+There were several requirement that needed to be reached so that this project would be successful.
+
+\subsubsection{Adaptability requirement}
+The code created during this project should be easily maintainable by developers who did not initially design the structure of the compiler.
+\linebreak
+The front-end and type checker both are of modular design making reasoning about the program structure easier to do. The parser monad provides an intuitive way of programming making the code easier to read. The coding was done following coding rules outlined in the book “clean code”[]. 
+
+\subsubsection{Correctness requirement}
+The program is a compiler and has an even smaller margin for bugs than other programs have. 
+No program the compiler compiles would be bug-free if the compiler itself is not bug-free.
+\linebreak
+To test the correctness of the front-end and compiler several test files containing MC code were created. There files would be parsed and the output of the parser would be manually checked for correctness. There were also files that would contain several errors and the parser would need to identify what is wrong with the code.
+In a later stage of development, when the back-end was capable of generating code, the output from the type checker was fed to the back-end. This resulted in executable code that worked as expected. 
+
+\subsubsection{Diagnostic requirement}
+The front-end and type checker need to be able to give descriptive error information for the programmer of MC.
+\linebreak
+A new Error system was developed for the parser monad. By giving errors priority over each other and giving the programmer a way to easily interact with the error priority, the error messages returned by the parser become more precise. It can give the exact location of the error and give the correct error message. 
+
+\subsection{Other results}
+New knowledge of the MC programming language was discovered during the development of the front-end and type checker. 
+
+The MC syntax was tweaked to allow better parsing.
+
+Premises were added to the declarations for easier manipulation of type information.
+
+Information about lexers and parsers was gained and documented.
+Information about parser monads was gained and documented.
+
+An easy to maintain Front-end was created that could parse MC3 entirely and a modular type checker was created that could check MC2 with dot net calls.
+
+A minimalistic parser for MC3 syntax was created at request of a costumer that had need for it.  
