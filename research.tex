@@ -317,7 +317,7 @@ So we will look at iterate. Iterate will succeed if all of the elements from the
 	}
 \end{code}
 
-\subsection{Developing the parser}
+\subsection{Developing the parser and type checker}
 Now we know about what a parser does and the abstractions used in them we will look at the structure and design choices of the parser itself.
 
 \subsubsection{Modular parser}
@@ -344,23 +344,54 @@ Type function and Type alias definitions need their declarations and may need ot
 
 And the Type function and Type alias declarations may need other type functions and aliases.
 
+The reason that these groups are separated like this is because of how dependencies of the language works.
+Function definitions need the function declarations and may need the other groups.
+Data may need type functions and type aliases.
+Type function and Type alias definitions need their declarations and may need other type functions and aliases.
+And the Type function and Type alias declarations may need other type functions and aliases.
 
+Splitting the parser into multiple modules has the advantage that it makes it easier to get more precise error messages. If there was one parser that needed to parse the full syntax the programmer would have needed to add structures to the parser to verify if the given error message is the correct one. With smaller parser modules however those structures can be kept to a minimum seeing as the smaller parser has less possible error messages to give. 
 
+\subsubsection{Development choices}
+
+The modular structure described above makes it possible to have working prototype early in the development cycle. The bare minimum of syntax that MC needs to function is Data and functions. Data and Functions are not depended on the other MC syntax and thus can be implemented without the other MC functionality. So now we have a starting point and a destination we can plan the order of which the MC features should be implemented.
+
+We start with implementing functions in a parser module because without functions the language could not execute. 
+Then Data gets implemented because after function it has the least dependencies.
+With Data and functions we have enough of the syntax to create a working program in MC.
+So the next module that will be implemented is a minimalistic version of the type checker for functions. The reason that we first implement the type checker for the functions and not the type checker for the Data is because  a Data declaration already holds enough type information so it can directly be translated to the back-end interface. This is a shortcut that does not work with generic data’s but it is good enough for the first prototype. A function however has rule definitions that hold no type information what so ever. The way that functions gain all their type information is if a symbol tables for their definitions are created. Which means that a type checker is needed to generate the symbol tables.
+For the first version of the function type checker we will not implement generic types. Again a shortcut that later needs to be rectified but it is good enough for the first prototype. 
+
+At this point we have enough of the front-end and type checker to have a first prototype that can interface with the back-end. The MC programs that can now compiler do not have side effects. Meaning that the program has no means to communicate with the outside world. The back-end can however generate the executable so that the value of the main function gets printed when the program ends. We can use this as an output to check if our MC programs are working correctly.
+
+Now that we have a working prototype we need to decide what feature of MC to add next. The next features with the least dependencies and the highest usability are DotNet functions and MC lambdas. We choose to implement DotNet functions because it allows for MC to have side effects, making the language far more useful.
+
+The DotNet functionality does not get its own module because the places in the syntax where you can use DotNet functions are limited. The Module that is responsible for parsing DotNet is the function definition module. The reason why the function definition module does this is because DotNet functions can only be found in premises. To check if a DotNet function is correctly used in the MC syntax the parser needs to interface with the DotNet library that contains the DotNet function that was found in the syntax. When requesting information about the DotNet function from the library we can get information about how many arguments the functions has and which types those arguments have. Later in the development of the front-end and type checker that type information will be used. Now however we can take a shortcut and ignore that type information. 
+
+In order to implement the lambda the type checker needs to be able to inference type information. The reason for this is that lambdas do not have a declaration that can provide type information. So the lambda can now only get its type information by being inferenced from the functions that calls it. To make type inference work we now need to correct all the shortcuts that we took to get here. We need a fully working type checker before we can implement any new features in the front-end. So the other parser modules will be left for a later time.
 
 \subsection{Developing the type checker}
+Work on the type checker got delayed until it was truly necessary to work on it. As was the case with the lambda. We now need to fix all the shortcuts we took when developing the first prototypes.
 
 \subsubsection{Normalizing before type-checking}
-If the input of the type checker is normalized the type checker becomes simpler.
-The normalized parser-ast is similar to the back-end interface but it also allows for generic types.
+Before we start type checking we will normalize the parser output. The reason that we do this is because the parser output allows for data structures with multiple interpretations. If we were to give the type checker the raw parser output, the type checker would need to be able to understand all those interpretations of that output. But if we first normalize the parser output we can make a representation of the parser output that only has one interpretation. And when the input of the type checker becomes simpler, so becomes the type checker.
 
+For the normalized parser output I decided to get it as similar as the back-end interface as possible. The back-end interface is what the type checker will output to when it is done with type checking. So if the input structure of the type checker is similar to the type checkers output structure we will simplify the type checker.
+
+The normalized parser output is similar to the back-end interface but it also allows for generic types. It allows for generic types because those are the types that the type checker needs to solve. The none generic types, or better said the declared types are not difficult to type check because the parser already did a simple check on them. 
 
 \subsubsection{Modular Type checker}
-The type checker is separated into several modules that each check the types of a part of the MC mark 3 language .
+Like the parser the type checker is separated into several modules that each check the types of a part of the MC language. Those modules are:
 	Rule type checkers
 	Function type checker
 	Data type checker
 	Type alias type checker
 	Type function type checker
+
+
+
+
+
 
 
 
