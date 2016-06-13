@@ -1,0 +1,181 @@
+\input{markup.tex}
+
+\begin{document}
+
+\title{Designing and implementation of the Meta Casanova 3 compiler front-end}
+\author{\writer}
+
+\begin{titlepage}
+   \input{voorpagina}
+\end{titlepage}
+
+\begin{abstract}
+   \emph{Designing and implementation of the Meta Casanova 3 compiler front-end.}
+   The internship will consist of developing a maintainable front-end and type checker for the bootstrap compiler of Meta casanova mark 3.
+   The goal of the assignment is to develop a system for the front-end of the compiler that can later still be easily maintained by other developers.
+   This internship will be executed within the language design field of computer science.
+   The internship will be carried out at \emph{Kenniscentrum Creating 010}.
+   The research will be qualitative and will make use of descriptive and testing research methods.
+   The end result will consist of a design and implementation for the front-end and type checker. 
+   The documentation wil be in the form of a bachelor thesis.
+\end{abstract}
+
+\section{Introduction}
+\subsection{Working title}
+Designing and implementation of the Meta Casanova 3 compiler front-end.
+
+\subsection{Motive}
+
+Creating games often proves challenging from both a design perspective and a programming perspective []. 
+In order to simplify the problems at the programming side of this challenge, a new programming language was created. 
+The programming language (Casanova) is designed to better express the abstractions found in games. 
+During development of Casanova the research team found that the code of the Casanova compiler became difficult to maintain. 
+To address this issue, a new language was created: Meta Casanova.
+
+Meta Casanova is a programming language meant for the development of compilers. 
+The need for such a language arose after the research group for the Casanova programming language found that their compiler became difficult to maintain and adapt. 
+This difficulty originated from the fact that F\#, 
+the language Casanova was written in, did not support the higher level of  abstractions that compiler developers could benefit from. 
+Thus MC was created. 
+MC proved itself preferable over F\# when the Casanova compiler was rewritten in MC. 
+What used to be 1480 lines of code in F\# are now 300 lines in MC []. 
+\linebreak
+The MC compiler does however have a few drawbacks. 
+The compiler does not give useful error messages, if something is wrong in the MC code it will be hard to identify exactly what. 
+It is difficult to maintain and expand the compilers code. 
+\linebreak
+So when a new and improved version of MC was developed, namely MC mark 3,  
+the research team decided to also fix the drawbacks that the compiler was facing by developing a new compiler. 
+
+
+\subsection{Importance}
+The result of this thesis will contribute to the development of Casanova and MC.
+The thesis will also serve as documentation for future developers of MC.
+
+\subsection{Goal}\label{sec:goalsmandate}
+The goal for this project is to create a maintainable and extendable front-end and type checker that future developers can continue with.
+
+\subsection{Problem statement}
+
+
+\subsection{Central research question and sub-questions}
+The following research question could be formed of the goal. 
+   How to develop a maintainable and extendable front-end and type-checker for the MC mark 3 programming language?
+In order to answer the main question the following sub question were formed.
+   What properties does MC have that the front-end needs to process?
+   How to develop a maintainable and extendable parser for MC?
+   How to apply a type-system to MC?
+The project comes with the following requirements:
+
+Adaptability requirement
+The code created during this project should be easily maintainable by developers who did not initially design the structure of the compiler.
+
+Correctness requirement
+The program is a compiler and has an even smaller margin for bugs than other programs have. 
+No program the compiler compiles would be bug-free if the compiler itself is not bug-free.
+
+Diagnostic requirement
+The front-end and type checker need to be able to give descriptive error information for the programmer of MC.
+
+Central research question and sub-questions
+From this problem statement follows the following research question:
+
+Diagnostic requirement
+The front-end and type checker need to be able to give descriptive error information for the programmer of MC.
+
+\subsection{The client}\label{sec:clientmandate}
+The graduation assignment will be carried out at Kenniscentrum Creating 010 with the research group of MC.
+The company is located in Rotterdam.
+\textit{Kenniscentrum Creating 010 is a transdisciplinary design-inclusive Research Center enabling citizens, students and creative industry making the future of Rotterdam}~\cite{creating2016home}.
+
+The research group is active within the language design area of computer sciences.
+
+
+\subsection{Working environment and tasks}\label{sec:workenvmandate}
+During the internship the student will work as a part of the existing research team, whom do research
+in the Casanova and MC languages. The student will be doing research and programming
+and will be supported and helped by the entire research team. Every two weeks the student will
+present his progress and receive feedback.
+
+The student also needs to show several competences:
+
+The competence \emph{administering} will be attained by developing the front-end and type checker according to the requirements set by the research group.
+
+The competence \emph{Analysing} will be attained by analysing the Meta Casanova language and creating a proper front-end for the language.
+
+The competence \emph{Advising} will be attained when communicating with the stakeholders.
+
+The competence \emph{Designing} will be attained developing the front-end and type checker.
+
+The student will be supported and helped by the entire research team.
+
+
+\section{Method}\label{ch:methodmandate}
+\subsection{Research methods}
+During the internship there will be made use of different research methods. This stems from
+the wide scope of the project and the fact that there are multiple research questions which
+require different approaches.
+First there will be research into lexers, parsers and type checkers. What are the possibilities
+and what have others already accomplished.
+Then exploitive research will be held to find a proper way to implement the MC language in
+the compiler.
+And finally a explanatory research will explain the working of the front-end and mid-end of
+the compiler.
+
+
+\subsection{Gathering information}
+The information needed will be gathered from the research team involved, via personal interviews,
+and via published papers concerning the material.
+
+
+\subsection{Validation of results}
+The validity of the results will be secured by regularly discussing with the client and the supervisor.
+Furthermore the results will be viewed as correct if the front-end is able to parse the
+features of the MC language. The type checker will be correct if it can produce a data structure that
+the back-end can use to generate code.
+
+\subsection{Validity and trustworthiness of sources}
+The sources used will be published papers and books respected in the compiler community.
+Other sources, such as personal communications will be with people who are approved by the
+supervisor.
+
+\subsection{Project methods}
+During the internship the LEAN-software development method will be used\cite{ries2011lean}.
+Using LEAN gives the ability to quickly iterate through versions and gather knowledge more easily through these iterations.
+
+When using LEAN results are fast available.
+These results can be used to catch faults early on and adjust the project accordingly.
+
+
+\subsection{Risk analyses}
+\begin{center}
+   \begin{tabular}
+      {| p{0.2\textwidth} | p{0.25\textwidth} | l | p{0.3\textwidth} |}
+      \hline
+      \textbf{Risk} & \textbf{Effect} & \textbf{Possibility} & \textbf{Counter measure}
+      \\ \hline
+      The language changes during development of the compiler. & Parts of the compiler need to be rewritten or addapted. & 40\% & Make the compiler flexible enough to accommodate future changes.
+      \\ \hline
+      The interface with the back-end changes. & Data that may not be available would be needed. & 60\% & Keep as much data available in the front-end and type checker.
+      \\ \hline
+      There is not enough time to add all the MC features to the compiler. & The compiler will not be able to compiler the full language. & 15\% & Asses which features are more important then the others and implement those.
+      \\ \hline
+   \end{tabular}
+\end{center}
+
+\subsection{Quality expectations}
+The lexer and parser are able to parse the MC language and give descriptive error information to
+the user. The type checker needs to generate correct type information that can be used by the
+Back-end.
+
+\section{Results}
+\subsection{Intended result}
+The end result should be a front-end and type checker that is easy to maintain and expand upon.
+
+\bibliographystyle{ieeetr}
+\bibliography{biblio}
+
+\begin{appendices}
+   \input{stakeholders}
+\end{appendices}
+\end{document}
